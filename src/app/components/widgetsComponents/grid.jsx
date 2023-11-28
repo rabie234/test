@@ -1,10 +1,13 @@
 import React from 'react'
 
 const Grid = ({data}) => {
+    console.log(data.length)
   return (
-    <div className=' grid grid-cols-51overflow-scroll '>{
+    <div className={` py-3 px-2 flex flex-row  w-full`}>
+        {
     data.map((items)=>{
-        return <img src={`https://www.ishtari.com/image/${items.image}`}></img>
+
+        return <div className='w-full h-full'> <img className=' object-cover w-full h-full' src={`https://www.ishtari.com/image/${items.image}`}/></div>
     })
 }
     </div>

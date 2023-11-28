@@ -2,9 +2,9 @@ import React from 'react'
 
 const Slider = ({data}) => {
   return (
-    <div className=' flex flex-row justify-center text-center overflow-x-auto w-full'>
+    <div className=' py-3 px-2  flex flex-row justify-center text-center overflow-x-auto w-full'>
     {data.map((items)=>{
-        return <img src={`https://www.ishtari.com/image/${items.image}`}></img>
+        return <div className='w-full h-full min-w-full'> <img className=' object-cover' src={`https://www.ishtari.com/image/${items.image}`}></img></div>
     })}
     </div>
   )
