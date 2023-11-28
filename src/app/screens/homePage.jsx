@@ -29,19 +29,23 @@ const HomePage = () => {
 
      return(
       <>
+      <div className=' bg-gray-100'>
+        <div className='container mx-auto'>
      {widgets.map((item)=>{
               if(item.display == 'grid'){
                 return <Grid data={item.items}/>
               }else if(item.display == 'carousel'){
-                return <Carousel data={item.items}/>
+                return <Carousel data={item.items} name={item.name}/>
               }else if (item.display == 'slider'){
-                return <SliderComponent data={item.items}/>
+                return <SliderComponent data={item.items} />
               }else{
                 return <Banner/>
               }
              
        } )
       }
+      </div>
+      </div>
       </>
      )
 

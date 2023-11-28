@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 const Header = () => {
    
   return (
-    <>
+    <div className='container mx-auto'>
     <div className='flex  flex-col'>
     <div className=' align-middle w-full text-center m-auto px-2 py-7  bg-[#FFFFFF] flex justify-between  flex-row '>
     <div className='   relative' style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
@@ -42,7 +42,7 @@ const Header = () => {
             </div>
             <NavBar />
             </div>
-    </>
+    </div>
   )
 }
 

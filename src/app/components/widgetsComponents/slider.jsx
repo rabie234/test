@@ -1,13 +1,52 @@
-import React from 'react'
+"use client";
 
-const Slider = ({data}) => {
+
+
+
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+export default function Slider({data}) {
   return (
-    <div className=' py-3 px-2  flex flex-row justify-center text-center overflow-x-auto w-full'>
-    {data.map((items)=>{
-        return <div className='w-full h-full min-w-full'> <img className=' object-cover' src={`https://www.ishtari.com/image/${items.image}`}></img></div>
-    })}
-    </div>
-  )
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="topSwiper"
+      >
+           
+       
+        {data.map((items)=>{
+           return <SwiperSlide>
+        <div className='w-full'>
+                <img className='w-full' src={`https://www.ishtari.com/image/${items.image}`} alt="" />
+            </div>
+            </SwiperSlide>
+        })}
+    
+        
+      </Swiper>
+    </>
+  );
 }
 
-export default Slider
+
+
+
+
+
+
+
